@@ -56,7 +56,7 @@ def viacsv(symbols,start=None,end=None):
         liData=[]
         iSid=0
         for S in tuSymbols:
-            IFIL="~/notebooks/csv/"+S+".csv"
+            IFIL="~/work/zlBacktest/"+S+".csv"
             if boDebug:
                print "S=",S,"IFIL=",IFIL
             dfData=pd.read_csv(IFIL,index_col='Date',parse_dates=True).sort_index()
@@ -70,7 +70,7 @@ def viacsv(symbols,start=None,end=None):
                     'Low': 'low',
                     'Close': 'close',
                     'Volume': 'volume',
-                    'Adj Close': 'price',
+                    #'Adj Close': 'price',
                 },
                 inplace=True,
             )
@@ -139,3 +139,7 @@ def viacsv(symbols,start=None,end=None):
     if boDebug:
        print "about to return ingest function"
     return ingest
+
+
+
+
